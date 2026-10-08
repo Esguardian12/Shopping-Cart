@@ -16,7 +16,7 @@ export default function Layout() {
                     item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
                 );
             }
-            return [ ...prevcart, { ...product, quantity}];
+            return [ ...prevCart, { ...product, quantity}];
         });
     };
 
@@ -31,11 +31,11 @@ export default function Layout() {
     };
 
     return (
-        <>
+        <div>
         <Navbar cartCount={totalItems} />
         <main>
             <Outlet context={{ cart, addToCart, updateQuantity}} />
         </main>
-        </>
+        </div>
     );
 }

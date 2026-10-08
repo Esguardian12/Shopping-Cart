@@ -4,8 +4,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './pages/Layout';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
-import Cart from './pages/Cart';
+import Cart  from './pages/Cart';
 import ErrorPage from './pages/ErrorPage';
+import './index.css';
 
 const router = createBrowserRouter([
     {
@@ -14,8 +15,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             { index:true, element: <Home /> },
-            { index:"shop", element: <Shop /> },
-            { index: "cart", element: <Cart />},
+            { path:"shop", element: <Shop /> },
+            { path: "cart", element: <Cart />},
         ],
     },
 ]);
